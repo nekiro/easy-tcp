@@ -1,0 +1,48 @@
+{
+  "name": "modern-tcp",
+  "version": "1.0.0",
+  "description": "modern and easy to use tcp server",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --verbose",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint .",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nekiro/easy-tcp.git"
+  },
+  "keywords": [
+    "tcp",
+    "server",
+    "socket"
+  ],
+  "author": "Marcin Jałocha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nekiro/easy-tcp/issues"
+  },
+  "homepage": "https://github.com/nekiro/easy-tcp#readme",
+  "devDependencies": {
+    "@types/jest": "^28.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "jest": "^28.1.1",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.4",
+    "typescript": "^4.7.3"
+  }
+}
